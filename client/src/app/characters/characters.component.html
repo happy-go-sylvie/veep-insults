@@ -1,0 +1,6 @@
+<section>
+	<figure *ngFor="let character of characters">
+  	<img src="../../assets/icon_{{ character.id }}@0.5x.png" srcset="../../assets/icon_{{ character.id }}@0.5x.png 100w, ../../assets/icon_{{ character.id }}@0.75x.png 150w, ../../assets/icon_{{ character.id }}@1x.png 200w, ../../assets/icon_{{ character.id }}@2x.png 400w" sizes="(min-width: 600px) and (max-width: 1000px) 150px, (min-width: 1000px) 200px, 100px" alt="Picture of {{ character.firstname }} {{ character.lastname }}"/>
+  	<figcaption>{{ character.firstname }} {{ character.lastname }}</figcaption>
+	</figure>
+</section>
