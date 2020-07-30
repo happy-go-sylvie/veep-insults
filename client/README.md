@@ -19,6 +19,12 @@ export const apiEnvironment = {
 	apiUrl: '<your ReST API URL>',
 }
 ```
+For example:
+```
+export const apiEnvironment = {
+	apiUrl: 'https://my-cloud-function/resources',
+}
+```
 
 Then run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
