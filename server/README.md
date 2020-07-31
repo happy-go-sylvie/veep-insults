@@ -10,10 +10,12 @@ This project uses Google Firebase:
 
 ### Database Setup
 
-Now, we're going to set up a database to store our list of characters and our list of insults.
+Now, let's set up a database to store our list of characters and our list of insults.
 
-Once your project is created, click "database" on the left menu.
+Once your project is created, click "Database" under "Develop" on the left menu.
 Under "Cloud Firestore", click "Create database".
+
+Start in production mode and use a *us-central* location.
 
 In this database, we create two collections *characters* and *insults*.
 
@@ -47,5 +49,13 @@ Now, we're going to implement the ReSTful services that will allow us to access 
 
 [Install the Google Firebase CLI](https://firebase.google.com/docs/cli).
 
-Then, go to your terminal, create a folder and in this folder, run `firebase init` and select `Functions` from the proposed menu.
+Then, go to your terminal, create a folder and in this folder, run `firebase init` and select `Functions` from the menu. Then select `Use an existing project` and select the project you created in Firebase. Select `JavaScript`, use ESLint and install the required dependencies with npm when prompted.
 
+From the Firebase console of your project, open the `Project settings`. Then in the `Service accounts`, click `Generate new private key` and save the key as `permissions.json` under the `functions` folder. Copy the Admin SDK configuration snippet and paste it in the file index.js.
+
+If you want to keep the database URL hidden from your public Github repository, you can use the package `dotenv`. Create a file named `.env` in the `functions` folder to set some environment variables that are used in the code.
+```
+DB_URL="<Your Firestore database URL>"
+```
+
+Then in `index.js`, include `require('dotenv').config();` and replace the database URL with process.env.DB_URL.
