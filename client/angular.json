@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "veep-insults-client": {
+    "veep-slander": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/veep-insults-client",
+            "outputPath": "dist/veep-slander",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "veep-insults-client:build"
+            "browserTarget": "veep-slander:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "veep-insults-client:build:production"
+              "browserTarget": "veep-slander:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "veep-insults-client:build"
+            "browserTarget": "veep-slander:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "veep-insults-client:serve"
+            "devServerTarget": "veep-slander:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "veep-insults-client:serve:production"
+              "devServerTarget": "veep-slander:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "veep-insults-client"
+  "defaultProject": "veep-slander"
 }
